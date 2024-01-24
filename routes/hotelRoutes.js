@@ -3,6 +3,6 @@ const { createHotel } = require('../controllers/hotelControllers');
 const authentificateToken = require('../middleware/authJwt');
 const router = express.Router();
 
-router.post('/create-hotel', authentificateToken, createHotel)
+router.post('/create-hotel', createHotel)
 
 module.exports = router
