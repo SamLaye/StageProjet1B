@@ -1,0 +1,140 @@
+body{
+  /* font-family: Roboto; */
+  background-image: url("./assets/images/__before.png");
+  background-size: cover;
+}
+:root{
+ --sidebarWidth: 280px;
+}
+/* =====================================================
+                AUTHENTIFICATION
+===================================================== */
+.auth {
+  height: 100vh;
+  background-image: url("./assets/images/_before.jpg");
+  background-size: cover;
+}
+.input{
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  border-bottom: 1px solid #333;
+}
+.input:focus{
+  box-shadow: none;
+}
+input{
+  background-color: transparent !important;
+}
+.btn{
+  background-color: #333;
+  border: none;
+}
+#connexion, #forgotPsw, #inscription{
+  height: 100vh;
+}
+.auth .anotherAction{
+  color: #ffd964;
+  cursor: pointer;
+  background-color: transparent;
+}
+.auth .anotherLink, .anotherLinkSidebar{
+  text-decoration: none;
+  color: #ffd964;
+}
+.anotherLinkSidebar{
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* =====================================================
+                DASHBORD
+===================================================== */
+.col-width-sidebar{
+  width: var(--sidebarWidth);
+}
+.col-width-navbar{
+  width: calc(100% - var(--sidebarWidth));
+}
+
+/* ===================NAVBAR================================ */
+#navbar{
+  width: calc(100% - var(--sidebarWidth));
+  background-color: #fff;
+  left: calc(var(--sidebarWidth) + 12px);
+  /* left: 312px; */
+  border-bottom: 1px solid #9f9f9f;
+}
+.homeIMG, #homeIMG, .stat-img{
+  width: 40px;
+  height: 40px;
+}
+#navbar-input-container{
+  width: 250px;
+}
+#navbar-input-container button{
+  background-color: transparent !important;
+}
+#navbar-input-container button i{
+  color: #333;
+}
+#navbar-input {
+  outline: none !important;
+  width: 70%;
+  background-color: transparent;
+}
+#logoutBtn{
+  cursor: pointer;
+}
+/* ===================SIDEBAR================================ */
+#sidebar-container-parent{
+  background-image: url("./assets/images/_before.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+.sidebar{
+  height: 100vh !important;
+}
+
+.sidebarProfil{
+  border-top: 1px solid #9f9f9f;
+  position: absolute;
+  bottom: 90px;
+}
+/* =====================================================
+                  CHILDREN
+===================================================== */
+#child{
+  padding-top: 60px;
+  left: var(--sidebarWidth);
+  color: #333;
+   /* float: right;  */
+  /*top: 50px; */
+}
+
+/* ====================En tete=============================== */
+.entete h1{
+  font-size: 20px;
+  font-weight: normal;
+}
+/* ====================En tete=============================== */
+.statTitle{
+  font-weight: lighter;
+}
+.statTitle span{
+  font-size: 35px;
+  font-weight: 400;
+}
+.stat .statDesc{
+  font-size: 17px;
+}
+/* ====================HOTEL=============================== */
+
+.hotelAdress{
+  color: #8D4B38;
+} 
+.hotelPrice, .hotelAdress{
+  font-size: 13px;
+}
