@@ -11,6 +11,10 @@ require('dotenv').config()
 app.use(cors())
 app.use(express.json())
 
+app.use("https://stageprojet1b-samlaye.onrender.com/", (req, res)=> {
+    res.status(200).send("Cool")
+})
+
 app.use("/api", authRoutes)
 app.use("/api/hotel", hotelRoutes)
 
