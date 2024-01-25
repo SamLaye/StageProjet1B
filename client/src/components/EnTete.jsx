@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
+import { message } from "antd";
 import Input from "./formulaire/Input";
 import FormLabel from "./formulaire/FormLabel";
 import MyButton from "./MyButton";
+import { getErrorMessage } from "../utils/GetError";
+import HotelServices from "../services/hotelServices";
 
 function EnTete() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [adress, setAdress] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const data = {
+        title,
+        description,
+        adress,
+        price,
+        image,
+      };
+      const response = await HotelServices.createHotel(data);
+      message.success("Hotel add with success!");
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+      message.error(getErrorMessage(error));
+    }
+  };
+
   return (
     <div className="d-flex justify-content-between bg-white p-2 entete">
       <div>
@@ -57,69 +85,84 @@ function EnTete() {
                 <div className="col-6 mb-3 p-2">
                   <FormLabel
                     style="form-label text-secondary"
-                    labelFor="exampleFormControlInput1"
+                    labelFor="hotelTitle"
                     labelName="Nom de l'hotel"
                   />
                   <Input
                     type="text"
                     style="form-control"
-                    placeholder="name@example.com"
-                    id="exampleFormControlInput1"
+                    placeholder="hotel name"
+                    id="hotelTitle"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required="required"
                   />
                 </div>
                 <div className="col-6 mb-3 p-2">
                   <FormLabel
-                    labelFor="exampleFormControlInput1"
+                    labelFor="hotelAddress"
                     style="form-label text-secondary"
                     labelName="Address"
                   />
                   <Input
                     type="text"
                     style="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="Adress"
+                    id="hotelAddress"
+                    placeholder="Address"
+                    value={adress}
+                    onChange={(e) => setAdress(e.target.value)}
+                    required="required"
                   />
                 </div>
                 <div className="col-6 mb-3 p-2">
                   <FormLabel
                     labelFor="exampleFormControlInput1"
                     style="form-label text-secondary"
-                    labelName="Email address"
+                    labelName="Description"
                   />
                   <Input
-                    type="email"
+                    type="text"
                     style="form-control text-secondary"
                     id="exampleFormControlInput1"
-                    placeholder="name@example"
+                    placeholder="Description..."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required="required"
                   />
                 </div>
-                <div className="col-6 mb-3 p-2">
+                {/* <div className="col-6 mb-3 p-2">
                   <FormLabel
                     labelFor="exampleFormControlInput1"
                     style="form-label text-secondary"
                     labelName="Numéro de téléphone"
                   />
                   <Input
-                    type="email"
+                    type="text"
                     style="form-control"
                     id="exampleFormControlInput1"
                     placeholder="name@example"
+                    value={tel}
+                    onChange={(e) => setTel(e.target.value)}
+                    required="required"
                   />
-                </div>
+                </div> */}
                 <div className="col-6 mb-3 p-2">
                   <FormLabel
-                    labelFor="exampleFormControlInput1"
+                    labelFor="hotelPrice"
                     style="form-label text-secondary"
                     labelName="Prix par nuit"
                   />
                   <Input
                     type="email"
                     style="form-control"
-                    id="exampleFormControlInput1"
-                    placeholder="name@example"
+                    id="hotelPrice"
+                    placeholder="1000"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    required="required"
                   />
                 </div>
-                <div className="col-6 mb-3 p-2">
+                {/* <div className="col-6 mb-3 p-2">
                   <FormLabel
                     labelFor="exampleFormControlInput1"
                     style="form-label text-secondary"
@@ -131,18 +174,21 @@ function EnTete() {
                     id="exampleFormControlInput1"
                     placeholder="name@k,,k,k,k"
                   />
-                </div>
+                </div> */}
                 <div className="col-12 mb-3 p-2">
                   <FormLabel
-                    labelFor="exampleFormControlInput1"
-                    className="form-label text-secondary"
+                    labelFor="file"
+                    style="form-label text-secondary "
                     labelName="Ajouter une photo"
                   />
                   <Input
-                    type="email"
-                    style="form-control"
-                    id="exampleFormControlInput1"
+                    type="file"
+                    style="form-control "
+                    name="image"
+                    id="file"
                     placeholder="name@example"
+                    required="required"
+                    onChange={(e) => setImage(e.target.files[0])}
                   />
                 </div>
               </form>
@@ -154,7 +200,12 @@ function EnTete() {
                 dataBsDismiss="modal"
                 btnLabel="Close"
               />
-              <MyButton type="button" style="btn btn-primary" btnLabel="Save" />
+              <MyButton
+                type="button"
+                onClick={handleSubmit}
+                style="btn btn-primary"
+                btnLabel="Save"
+              />
             </div>
           </div>
         </div>

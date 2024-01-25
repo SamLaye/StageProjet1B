@@ -8,6 +8,7 @@ function MyButton({
   dataBsDismiss,
   ariaLabel,
   btnLabel,
+  onClick,
 }) {
   return (
     <button
@@ -17,6 +18,7 @@ function MyButton({
       data-bs-target={dataBsTarget}
       data-bs-dismiss={dataBsDismiss}
       aria-label={ariaLabel}
+      onClick={onClick}
     >
       {btnLabel}
     </button>

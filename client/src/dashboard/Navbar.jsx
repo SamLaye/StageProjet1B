@@ -7,6 +7,7 @@ import { IoIosNotifications } from "react-icons/io";
 import Input from "../components/formulaire/Input";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
+import EnTete from "../components/EnTete";
 
 const Navbar = () => {
   const démalCi = useNavigate();
