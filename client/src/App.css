@@ -142,3 +142,6 @@ input{
 #loginBtn:disabled{
   background-color: #333;
 }
+#loginBtn:hover{
+  background-color: #404040 !important;
+}
