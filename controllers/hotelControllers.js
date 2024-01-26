@@ -3,18 +3,8 @@ const Hotel = require("../models/Hotels")
 
 exports.createHotel = async (req, res) => {
     try{
-
-        // const hotelObject = JSON.parse(req.body)
-        // console.log(req.body)
-
-
-        const data = req.body
-        delete data.image;
-        delete data._id;
-        const hotel = new Hotel({
-            ...data,
-            image: req.file ? `${req.protocol}://${req.get('host')}/images/${req.file.filename}` : null
-        })
+         const data = req.body
+        const hotel = new Hotel(data)
         const result = await hotel.save()
         console.log(result)
         res.status(201).send({message: "Hotel create with success!"})
@@ -26,8 +16,9 @@ exports.createHotel = async (req, res) => {
 }
 
 exports.getAllHotel = async(req, res) => {
+    const {userId} = req.params;
     try{
-        const result = await Hotel.find()
+        const result = await Hotel.find({createdBy: userId})
         res.send(result)
     }catch (err) {
         console.log(err)

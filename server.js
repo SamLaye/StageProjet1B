@@ -14,7 +14,7 @@ mongoose.connect(process.env.DB_URL).then((result)=>{
 
 APP.use(cors())
 APP.use(cors({
-    origin: 'https://stage-projet1-b.vercel.app/connexion'
+    origin: 'https://stage-projet1-b.vercel.app'
 }))
 APP.use(express.json())
 

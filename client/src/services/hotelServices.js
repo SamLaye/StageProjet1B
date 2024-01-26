@@ -8,8 +8,8 @@ const createHotel = (data) => {
     return axios.post(SERVER_URL + '/create-hotel', data)
 }
 
-const getAllHotel = () => {
-    return axios.get(SERVER_URL + '/all-hotel')
+const getAllHotel = (userId) => {
+    return axios.get(SERVER_URL + '/all-hotel' +userId)
 }
 
 const updateHotel = (id) => {

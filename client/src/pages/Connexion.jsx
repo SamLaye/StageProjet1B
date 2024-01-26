@@ -87,6 +87,7 @@ export default function Connexion() {
                 onClick={handleSubmit}
                 type="submit"
                 className="btn btn-primary w-100 mx-auto"
+                id="loginBtn"
               >
                 Se connecter
               </button>

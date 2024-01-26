@@ -138,3 +138,7 @@ input{
 .hotelPrice, .hotelAdress{
   font-size: 13px;
 }
+
+#loginBtn:disabled{
+  background-color: #333;
+}
