@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 5000
 require('dotenv').config()
 
 APP.use(cors())
+APP.use(cors({
+    origin: 'https://stage-projet1-b.vercel.app/connexion'
+}))
 APP.use(express.json())
 
 
