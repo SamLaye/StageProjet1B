@@ -18,13 +18,10 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className="row justify-content-between position-fixed z-2 py-2"
-      id="navbar"
-    >
+    <div className="row justify-content-between z-2 py-2" id="navbar">
       {/* LA BARRE DE RECHERCHE _________________________start___ */}
       <div className="col my-auto">
-        <h2 className="text-dark">Dashoard</h2>
+        <h2 className="text-dark navTitle">Dashoard</h2>
       </div>
       {/* _______________________________________________end_____ */}
 

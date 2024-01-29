@@ -3,12 +3,20 @@ const Hotel = require("../models/Hotels")
 
 exports.createHotel = async (req, res) => {
     try{
-         const data = req.body
-        const hotel = new Hotel(data)
+        // res.status(201).send({message: "Hotel create with success!"})
+        const data = req.body
+        console.log("data", data)
+        const hotel = new Hotel({
+            ...data,
+            // image
+            image: `${req.protocol}://${req.get('host')}/images/${req.file ? req.file.filename : ""}`
+            // image: req.file ? req.file.filename : null
+        })
+        console.log("hotel", hotel)
         const result = await hotel.save()
-        console.log(result)
-        res.status(201).send({message: "Hotel create with success!"})
-
+        // console.log("result", result)
+        res.status(201).send({message: "Hotel create with successffff!"})
+        console.log(req.file)
     }catch(err){
         console.log(err)
         res.status(400).send(err)
@@ -16,9 +24,10 @@ exports.createHotel = async (req, res) => {
 }
 
 exports.getAllHotel = async(req, res) => {
-    const {userId} = req.params;
+    // const {userId} = req.params;
     try{
-        const result = await Hotel.find({createdBy: userId})
+        // const result = await Hotel.find({createdBy: userId})
+        const result = await Hotel.find()
         res.send(result)
     }catch (err) {
         console.log(err)

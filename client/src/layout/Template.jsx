@@ -8,17 +8,14 @@ export default function Template(props) {
     // LA TEMPLATE DEFINI L'ARCHITECTURE GOLBALE DE L'APP
     <div className="container-fluid ">
       <div className="row px-0 h-100 ">
-        <div
-          className="col-width-sidebar h-100 position-fixed z-3"
-          id="sidebar-container-parent"
-        >
+        <div className="col-width-sidebar z-3" id="sidebar-container-parent">
           {props.sidebar}
         </div>
-        <div className="d-flex flex-column col-width-navbar text-white">
+        <div className="d-flex flex-md-column col-width-navbar text-white">
           <div className="" id="navbar">
             {props.navbar}
           </div>
-          <div className="position-relative " id="child">
+          <div className="position-relative" id="child">
             {props.children}
           </div>
         </div>

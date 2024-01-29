@@ -5,7 +5,7 @@ const multer = require('../middleware/multer-config');
 const router = express.Router();
 
 router.post('/create-hotel', multer, createHotel)
-router.get('/all-hotel/', getAllHotel)
+router.get('/all-hotel', getAllHotel)
 router.delete('/delete-hotel/:id', deleteHotel)
 router.patch('/update-hotel/:id', updateHotel)
 

@@ -30,15 +30,18 @@ export default function Sidebar() {
     <div className="h-100 sidebar">
       {console.log(user)}
       {/* Photo de profil du user _______________________start___ */}
-      <div className="d-flex justify-content-center mb-3 mt-2">
-        <img src={logoRT} alt="" />
-        <h2 className="text-white ms-3 fs-4">RED PRODUCT</h2>
+      <div className="d-flex justify-content-center mb-3 mt-2 redProductContent">
+        <img src={logoRT} alt="" className="redProductConten" />
+        <h2 className="ms-3 my-auto redProduct">RED PRODUCT</h2>
       </div>
       {/* _______________________________________________end_____ */}
 
-      <span>Principal</span>
+      <span className="principalText">Principal</span>
       {/* Menu1 de navigation ___________________________start___ */}
-      <ul className="ps-0 " id="menu1">
+      <ul
+        className="ps-0 d-flex flex-md-column text-center text-md-start"
+        id="menu1"
+      >
         {sidebarMenu1.map((item) => (
           <MenuItems {...item} />
         ))}

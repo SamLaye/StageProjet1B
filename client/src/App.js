@@ -34,8 +34,8 @@ function App() {
       )
       :
       <div className='d-flex flex-column justify-content-center mx-auto align-items-center'>
-         <h1>Waay mani, nga dém connectéwou dji, ngay ték xél noonou</h1>
-         <h2>Beusseul bouton bi ci souf</h2>
+         <h1>La page tarde à s'afficher?</h1>
+         <h2>Cliquez sur le bouton ci-dessous pour vous reconnecter</h2>
          <button className='btn btn-primary rounded border  w-25' >
             <Link to='/' className='text-white'>Connection</Link> 
          </button>

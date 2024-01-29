@@ -1,10 +1,85 @@
+
 body{
   /* font-family: Roboto; */
   background-image: url("./assets/images/__before.png");
   background-size: cover;
 }
 :root{
- --sidebarWidth: 280px;
+  --sidebarWidth: 270px;
+}
+@media screen and (max-width: 1000px) {
+  :root {
+      --sidebarWidth: 200px;
+    }
+  /* ===================SIDEBAR================================ */
+  .sidebar .redProduct{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 860px) {
+  :root {
+      --sidebarWidth: 180px;
+    }
+  /* ===================SIDEBAR================================ */
+    
+  .sidebar .menuItemName{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 765px) {
+  :root {
+      --sidebarWidth: 100%;
+    }
+    /* =====================================================
+                  DASHBORD
+  ===================================================== */
+  .sidebar{
+    display: flex;
+    justify-content: center;
+  }
+  .sidebar .MenuItemsColor{
+    margin: 0 10px;
+  }
+  .col-width-sidebar {
+    width: var(--sidebarWidth);
+    position: absolute;
+    transition: 1s ease-in-out;
+    height: 10vh !important;
+    bottom: 0;
+  }
+  .col-width-navbar {
+    position: relative;
+    width: 100% !important;
+  }
+  .sidebar .redProductContent, .sidebar .menuItemName, 
+  .principalText, .sidebarProfil{
+    display: none !important;
+  }
+
+  #navbar {
+    position: absolute;
+    z-index: 10 !important;
+    width: 100% !important;
+    background-color: #fff;
+    left: 0 !important;
+    top: 0 !important;
+    height: 12vh !important;
+  }
+    /* =====================================================
+                      CHILDREN
+    ===================================================== */
+    #child {
+      left: 0 !important;
+      width: 100% !important;
+    }
+}
+@media screen and (max-width: 526px){
+  .navTitle{
+    display: none;
+  }
+    #navbar-input-container {
+      width: 250px !important;
+    }
 }
 /* =====================================================
                 AUTHENTIFICATION
@@ -53,9 +128,12 @@ input{
 ===================================================== */
 .col-width-sidebar{
   width: var(--sidebarWidth);
+  transition: 0.3s ease-in-out;
+  position: fixed;
 }
 .col-width-navbar{
-  width: calc(100% - var(--sidebarWidth));
+  width: calc(100% - var(--sidebarWidth)) ;
+  transition: 0.3s ease-in-out;
 }
 
 /* ===================NAVBAR================================ */
@@ -63,7 +141,7 @@ input{
   width: calc(100% - var(--sidebarWidth));
   background-color: #fff;
   left: calc(var(--sidebarWidth) + 12px);
-  /* left: 312px; */
+  position: fixed;
   border-bottom: 1px solid #9f9f9f;
 }
 .homeIMG, #homeIMG, .stat-img{
@@ -88,6 +166,10 @@ input{
   cursor: pointer;
 }
 /* ===================SIDEBAR================================ */
+.sidebar .redProduct {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+}
 #sidebar-container-parent{
   background-image: url("./assets/images/_before.jpg");
   background-size: cover;
@@ -96,6 +178,7 @@ input{
 
 .sidebar{
   height: 100vh !important;
+  transition: 0.5s ease-in-out;
 }
 
 .sidebarProfil{
@@ -103,6 +186,13 @@ input{
   position: absolute;
   bottom: 90px;
 }
+.anotherLinkSidebar:hover{
+  color: #484b4e;
+}
+.MenuItemsColor:hover{
+  background-color: #fff;
+}
+
 /* =====================================================
                   CHILDREN
 ===================================================== */
@@ -131,6 +221,11 @@ input{
   font-size: 17px;
 }
 /* ====================HOTEL=============================== */
+
+.card{
+  border-radius: 13px;
+  overflow: hidden;
+}
 
 .hotelAdress{
   color: #8D4B38;

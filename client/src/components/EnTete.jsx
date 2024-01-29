@@ -22,7 +22,6 @@ function EnTete() {
         description,
         adress,
         price,
-        image,
       };
       const response = await HotelServices.createHotel(data);
       message.success("Hotel add with success!");
@@ -81,7 +80,12 @@ function EnTete() {
               />
             </div>
             <div class="modal-body">
-              <form action="" className="row">
+              <form
+                action="/upload"
+                className="row"
+                enctype="multipart/form-data"
+              >
+                {/* ___________________________________  */}
                 <div className="col-6 mb-3 p-2">
                   <FormLabel
                     style="form-label text-secondary"
@@ -190,22 +194,24 @@ function EnTete() {
                     required="required"
                     onChange={(e) => setImage(e.target.files[0])}
                   />
+                  {console.log("Contenu de l'image", image)}
                 </div>
+                <div className="modal-footer">
+                  <MyButton
+                    type="button"
+                    style="btn btn-secondary"
+                    dataBsDismiss="modal"
+                    btnLabel="Close"
+                  />
+                  <MyButton
+                    type="button"
+                    onClick={handleSubmit}
+                    style="btn btn-primary"
+                    btnLabel="Save"
+                  />
+                </div>
+                {/* ______________________________  */}
               </form>
-            </div>
-            <div className="modal-footer">
-              <MyButton
-                type="button"
-                style="btn btn-secondary"
-                dataBsDismiss="modal"
-                btnLabel="Close"
-              />
-              <MyButton
-                type="button"
-                onClick={handleSubmit}
-                style="btn btn-primary"
-                btnLabel="Save"
-              />
             </div>
           </div>
         </div>
