@@ -3,18 +3,14 @@ const Hotel = require("../models/Hotels")
 
 exports.createHotel = async (req, res) => {
     try{
-        // res.status(201).send({message: "Hotel create with success!"})
         const data = req.body
         console.log("data", data)
         const hotel = new Hotel({
             ...data,
-            // image
             image: `${req.protocol}://${req.get('host')}/images/${req.file ? req.file.filename : ""}`
-            // image: req.file ? req.file.filename : null
         })
         console.log("hotel", hotel)
         const result = await hotel.save()
-        // console.log("result", result)
         res.status(201).send({message: "Hotel create with successffff!"})
         console.log(req.file)
     }catch(err){

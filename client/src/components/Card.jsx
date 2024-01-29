@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../assets/images/images.png";
 
-function Card({ addresse, title, price, hotelKey }) {
+function Card({ image, addresse, title, price, hotelKey }) {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-2" key={hotelKey}>
       <div className="card">

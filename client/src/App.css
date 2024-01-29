@@ -26,7 +26,7 @@ body{
     font-size: 15px;
   }
 }
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 768px) {
   :root {
       --sidebarWidth: 100%;
     }
