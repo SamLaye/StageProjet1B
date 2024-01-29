@@ -7,6 +7,7 @@ const hotelSchema = new Schema({
     adress: {type: String, required: true},
     price: {type: String, required: true},
     image:  String,
+    userId: Schema.ObjectId,
     createdBy: {
         ref: "User",
         type: Schema.ObjectId

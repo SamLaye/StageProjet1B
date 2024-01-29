@@ -25,8 +25,7 @@ function Cards() {
     <div className="container mt-4">
       <div className="row p-1">
         <EnTete />
-        {hotels &&
-          hotels.data &&
+        {hotels && hotels.data && hotels.data.length > 0 ? (
           hotels.data.map((hotel) => (
             <Card
               image={hotel.image}
@@ -35,9 +34,17 @@ function Cards() {
               hotelKey={hotel._id}
               title={hotel.title}
             />
-          ))}
-        <Card />
-        <Card />
+          ))
+        ) : (
+          <div
+            className="d-flex align-items-center justify-content-center"
+            id="aucunHotel"
+          >
+            <span className="fs-3 fst-italic">
+              Aucun(s) hotel(s) ajouté(s) pour le moment...
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

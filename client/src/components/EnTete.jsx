@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import MyButton from "./MyButton";
-import ModalForm from "./MondalForm";
+import ModalForm from "./formulaire/MondalForm";
 
 function EnTete() {
   return (
@@ -61,5 +61,4 @@ function EnTete() {
     </div>
   );
 }
-
 export default EnTete;

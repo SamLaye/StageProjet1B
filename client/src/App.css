@@ -44,7 +44,7 @@ body{
     width: var(--sidebarWidth);
     position: absolute;
     transition: 1s ease-in-out;
-    height: 10vh !important;
+    height: 8vh !important;
     bottom: 0;
   }
   .col-width-navbar {
@@ -63,7 +63,7 @@ body{
     background-color: #fff;
     left: 0 !important;
     top: 0 !important;
-    height: 12vh !important;
+    height: 10vh !important;
   }
     /* =====================================================
                       CHILDREN
@@ -165,6 +165,9 @@ input{
 #logoutBtn{
   cursor: pointer;
 }
+.inputForm:focus{
+  box-shadow: none;
+}
 /* ===================SIDEBAR================================ */
 .sidebar .redProduct {
   font-size: 17px;
@@ -239,4 +242,7 @@ input{
 }
 #loginBtn:hover{
   background-color: #404040 !important;
+}
+#aucunHotel{
+  height: 30vh;
 }
