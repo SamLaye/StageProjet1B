@@ -36,6 +36,8 @@ function Cards() {
               title={hotel.title}
             />
           ))}
+        <Card />
+        <Card />
       </div>
     </div>
   );
