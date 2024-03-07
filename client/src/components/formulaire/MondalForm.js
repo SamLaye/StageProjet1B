@@ -41,7 +41,7 @@ function ModalForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="row">
+    <form onSubmit={handleSubmit} className="row" id="myModalForm">
       <div className="col-12 col-md-6 p-1">
         <label>Title:</label>
         <input
@@ -49,16 +49,6 @@ function ModalForm() {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </div>
-      <div className="col-12 col-md-6 p-1">
-        <label>Description:</label>
-        <input
-          className="form-control inputForm"
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
           required
         />
       </div>
@@ -73,6 +63,36 @@ function ModalForm() {
         />
       </div>
       <div className="col-12 col-md-6 p-1">
+        <label>Email:</label>
+        <input
+          className="form-control inputForm"
+          type="email"
+          // value={adress}
+          // onChange={(e) => setAdress(e.target.value)}
+          // required
+        />
+      </div>
+      <div className="col-12 col-md-6 p-1">
+        <label>Telephone:</label>
+        <input
+          className="form-control inputForm"
+          type="number"
+          // value={adress}
+          // onChange={(e) => setAdress(e.target.value)}
+          // required
+        />
+      </div>
+      <div className="col-12 col-md-6 p-1">
+        <label>Description:</label>
+        <input
+          className="form-control inputForm"
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+      </div>
+      <div className="col-12 col-md-6 p-1">
         <label>Price:</label>
         <input
           className="form-control inputForm"
@@ -82,21 +102,29 @@ function ModalForm() {
           required
         />
       </div>
-      <div className="col-12 col-md-6 p-1">
-        <label>Image:</label>
-        <input
-          className="form-control inputForm"
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-          required
-        />
+      <div className="col-12  p-1">
+        <label>Ajouter une photo</label>
+        <div className="d-flex flex-column justify-content-center align-items-center inputFormTypeFile p-2 rounded">
+          <label htmlFor="file" className="d-flex flex-column text-center">
+            <i className="bi bi-card-image fs-1 opacity-50"></i>
+            <span className="opacity-50">Ajouter une photo</span>
+          </label>
+          <input
+            className="form-control inputForm"
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+            required
+          />
+        </div>
+          
       </div>
       <div className="text-end">
         {/* <button className="btn text-white" type="submit">Submit</button> */}
         <MyButton
           type="submit"
-          style="btn text-white"
-          btnLabel="Submit"
+          style="btn text-white px-3 mt-1"
+          btnLabel="Enregistrer"
+          id="btnCloseHotelModal"
         />
       </div>
       

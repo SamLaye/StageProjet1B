@@ -11,9 +11,9 @@ require('dotenv').config()
 
 
 APP.use(cors())
-APP.use(cors({
-    origin: 'https://stage-projet1-b.vercel.app'
-}))
+// APP.use(cors({
+//     origin: 'https://stage-projet1-b.vercel.app'
+// }))
 APP.use(express.json())
 
 // const fileStorageEngine = multer({

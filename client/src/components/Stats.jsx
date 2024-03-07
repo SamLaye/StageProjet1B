@@ -3,7 +3,7 @@ import Stat from "./Stat";
 
 function Stats() {
   return (
-    <div className="row">
+    <div className="row p-2">
       <Stat />
       <Stat />
       <Stat />

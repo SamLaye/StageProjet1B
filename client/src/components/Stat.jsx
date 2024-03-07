@@ -3,7 +3,7 @@ import user from "../assets/images/user.png";
 
 function Stat() {
   return (
-    <div className="col-12 col-md-6 col-lg-4 p-2">
+    <div className="col-12 col-md-6 col-lg-4 p-3">
       <div className="bg-white bg-danger d-flex rounded p-2">
         <img
           src={user}

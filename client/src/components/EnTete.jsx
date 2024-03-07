@@ -4,6 +4,12 @@ import MyButton from "./MyButton";
 import ModalForm from "./formulaire/MondalForm";
 
 function EnTete() {
+  const labelBTN = (
+    <span>
+      <i class="bi bi-plus"></i> Créer un nouveau hotel
+    </span>
+  );
+
   return (
     <div className="d-flex justify-content-between bg-white p-2 entete">
       <div>
@@ -20,7 +26,8 @@ function EnTete() {
           style="btn btn-primary"
           dataBsToggle="modal"
           dataBsTarget="#staticBackdrop"
-          btnLabel="Launch modal"
+          btnLabel={labelBTN}
+          id="btnCreateNewHotel"
         />
       </div>
 

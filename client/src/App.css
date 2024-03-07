@@ -77,9 +77,9 @@ body{
   .navTitle{
     display: none;
   }
-    #navbar-input-container {
-      width: 250px !important;
-    }
+  #navbar-input-container {
+    width: 250px !important;
+  }
 }
 /* =====================================================
                 AUTHENTIFICATION
@@ -165,8 +165,13 @@ input{
 #logoutBtn{
   cursor: pointer;
 }
+ 
 .inputForm:focus{
   box-shadow: none;
+}
+.inputFormTypeFile{
+  border: 1px solid #dcdcdc;
+  min-height: 20vh;
 }
 /* ===================SIDEBAR================================ */
 .sidebar .redProduct {
@@ -212,6 +217,10 @@ input{
   font-size: 20px;
   font-weight: normal;
 }
+#myModalForm{
+  height: 70vh;
+  overflow-y: auto;
+}
 /* ====================En tete=============================== */
 .statTitle{
   font-weight: lighter;
@@ -222,6 +231,14 @@ input{
 }
 .stat .statDesc{
   font-size: 17px;
+}
+#btnCreateNewHotel{
+  background-color: transparent ;
+  color: #333;
+  border: 1px solid #333;
+}
+#btnCloseHotelModal:hover{
+  background-color: #404040;
 }
 /* ====================HOTEL=============================== */
 
